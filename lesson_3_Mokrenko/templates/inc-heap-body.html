@@ -1,0 +1,44 @@
+<div id="site_content">
+
+    <h1>Перечень потенциальных задач</h1>
+
+    <table>
+        <tr class="head">
+            <th>№</th>
+            <th>Задача</th>
+            <th>Запланировать на завтра</th>
+            <th>Заметки</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>Сделать домашнее задание к уроку 2</td>
+            <td>
+                <input type="checkbox" id="demo1" class="input_hide">
+                <label for="demo1" data-on-label="Да" data-off-label="Нет"></label>
+            </td>
+            <td>Предварительно должно быть сделано ДЗ к уроку 1</td>
+        </tr>
+        <tr class="even">
+            <th>2</th>
+            <td>Разобрать лоджию</td>
+            <td>
+                <input type="checkbox" id="demo2" class="input_hide">
+                <label for="demo2" data-on-label="Да" data-off-label="Нет"></label>
+            </td>
+            <td>Нужно дождаться тепла</td>
+        </tr>
+    </table>
+    <div id="content">
+
+        <form action="" method="post">
+            <fieldset>
+                <legend> Добавить задачу в кучу</legend>
+                <p><label class="title" for="taskname">Задача:</label>
+                    <input type="text" name="taskname" id="taskname"><br/>
+                    <label class="title" for="notes">Заметки:</label>
+                    <input type="text" name="notes" id="notes"></p>
+            </fieldset>
+            <div class="submit"><input type="submit" value="Добавить"/></div>
+        </form>
+    </div>
+</div>

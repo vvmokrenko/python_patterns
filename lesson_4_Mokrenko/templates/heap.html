@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Записная книжка
+{% endblock %}
+
+{% block style %}
+    {% include "inc-style-submit.html" %}
+    {% include "inc-style-general.html" %}
+    {% include "inc-style-checkbox.html" %}
+    <style type="text/css">
+                input {	display: inline;}
+                .input_hide {	display: none;}
+
+    </style>
+{% endblock %}
+
+
+{% block body %}
+{% include "inc-heap-body.html" %}
+{% endblock %}
