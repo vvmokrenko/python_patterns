@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block style %}
+    {% include "inc-style-general.html" %}
+    <style type="text/css">
+       #site_content
+			{ margin: auto }
+       .form_settings .input_partner
+            {width: 50px }
+       .form_settings fieldset
+            { border: 0;}
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    {% include "inc-registration-body.html" %}
+{% endblock %}

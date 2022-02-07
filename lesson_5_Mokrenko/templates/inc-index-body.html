@@ -1,0 +1,86 @@
+<div id="site_content">
+    <h1>План на {{date}}</h1>
+
+    <table>
+        <tr class="head">
+            <th>№</th>
+            <th>Задача</th>
+            <th>Категория</th>
+            <th>Приоритет</th>
+            <th>Плановое время</th>
+            <th>Фактическое время</th>
+            <th>Выполнено</th>
+            <th>Заметки</th>
+        </tr>
+
+        {% for item in objects %}
+
+            <tr>
+                <th>{{item.id}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.category_name}}</td>
+                <td>{{item.priority_name}}</td>
+                <td>
+                    <section class="container">
+                        <div class="dropdown">
+                            <select name="one" class="dropdown-select">
+                                <option value="">Оценил на …</option>
+                                <option value="30min">0ч.30мин.</option>
+                                <option value="60min">1ч.</option>
+                                <option value="90min">1ч.30мин.</option>
+                                <option value="120min">2ч.</option>
+                                <option value="150min">2ч.30мин.</option>
+                                <option value="180min">3ч.</option>
+                                <option value="210min">3ч.30мин.</option>
+                                <option value="240min">4ч.</option>
+                                <option value="270min">4ч.30мин.</option>
+                                <option value="300min">5ч.</option>
+                                <option value="330min">5ч.30мин.</option>
+                                <option value="360min">6ч.</option>
+                                <option value="390min">6ч.30мин.</option>
+                                <option value="420min">7ч.</option>
+                                <option value="450min">7ч.30мин.</option>
+                                <option value="480min">8ч.</option>
+                            </select>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <section class="container">
+                        <div class="dropdown dropdown-notimplemented">
+                            <select name="two" class="dropdown-select">
+                                <option value="">Сделал за …</option>
+                                <option value="30min">0ч.30мин.</option>
+                                <option value="60min">1ч.</option>
+                                <option value="90min">1ч.30мин.</option>
+                                <option value="120min">2ч.</option>
+                                <option value="150min">2ч.30мин.</option>
+                                <option value="180min">3ч.</option>
+                                <option value="210min">3ч.30мин.</option>
+                                <option value="240min">4ч.</option>
+                                <option value="270min">4ч.30мин.</option>
+                                <option value="300min">5ч.</option>
+                                <option value="330min">5ч.30мин.</option>
+                                <option value="360min">6ч.</option>
+                                <option value="390min">6ч.30мин.</option>
+                                <option value="420min">7ч.</option>
+                                <option value="450min">7ч.30мин.</option>
+                                <option value="480min">8ч.</option>
+                            </select>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <input type="checkbox" id="isexecuted{{item.id}}" {{"checked" if item.isexecuted}}>
+                    <label for="isexecuted{{item.id}}" data-on-label="Да" data-off-label="Нет"></label>
+                </td>
+                <td>{{item.comment}}</td>
+            </tr>
+
+        {% endfor %}
+
+
+
+    </table>
+
+</div>
