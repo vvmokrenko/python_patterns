@@ -1,0 +1,71 @@
+<div id="site_content">
+
+    <h1>Перечень потенциальных задач</h1>
+
+
+    <div id="content">
+
+        <form action="create-task-heaped" method="post">
+            <fieldset>
+                <legend> Добавить задачу в кучу</legend>
+                <p><label class="title" for="taskname">Задача:</label>
+                    <input type="text" name="taskname" id="taskname_id"><br/>
+                    <label class="title" for="notes">Заметки:</label>
+                    <input type="text" name="notes" id="notes_id"></p>
+            </fieldset>
+            <div class="submit"><input type="submit" value="Добавить"/></div>
+        </form>
+        <form action="create-task-heaped-cbv" method="post">
+            <fieldset>
+                <legend> Добавить задачу в кучу</legend>
+                <p><label class="title" for="taskname">Задача:</label>
+                    <input type="text" name="taskname" id="taskname_id"><br/>
+                    <label class="title" for="notes">Заметки:</label>
+                    <input type="text" name="notes" id="notes_id"></p>
+            </fieldset>
+            <div class="submit"><input type="submit" value="Добавить через CBV"/></div>
+        </form>
+    </div>
+
+    <table>
+        <tr class="head">
+            <th>№</th>
+            <th>Задача</th>
+            <th>Запланировать на завтра</th>
+            <th>Категория</th>
+            <th>Приоритет</th>
+            <th>Заметки</th>
+        </tr>
+
+        {% for item in objects %}
+
+            <tr>
+                <th>{{item.id}}</th>
+                <td>{{item.name}}</td>
+                <td>
+                    <form action="create-task-scheduled" method="post">
+                        <div style="text-align: center">
+                            <input type="hidden" name="task_id" value="{{item.id}}""/>
+                            <input type="submit" name="press_button" id="{{item.id}}" value=">>"/>
+                        </div>
+                    </form>
+                </td>
+                <td>{{item.category_name}}</td>
+                <td>{{item.priority_name}}</td>
+                <td>{{item.comment}}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <div id="work_with_json">
+
+        <form action="save_to_json" method="post">
+            <div class="submit"><input type="submit" value="Сериализовать"/></div>
+        </form>
+        <form action="upload_from_json" method="post">
+            <div class="submit"><input type="submit" value="Десериализовать"/></div>
+        </form>
+    </div>
+</div>
